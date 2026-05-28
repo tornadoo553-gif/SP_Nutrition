@@ -1,0 +1,395 @@
+/* ================= GOOGLE FONT & GLOBAL SETTINGS ================= */
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background-color: #111111;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo img{
+    width: 90px;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #00ff88;
+}
+
+.shop-btn{
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #00ff88;
+    color: black;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.shop-btn:hover{
+    transform: scale(1.05);
+}
+
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    min-height: 90vh;
+}
+
+.hero-content{
+    flex: 1;
+}
+
+.hero-content h1{
+    font-size: 60px;
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 18px;
+    color: #bbbbbb;
+
+    margin-bottom: 30px;
+
+    max-width: 600px;
+}
+
+.hero-btn{
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #00ff88;
+    color: black;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover{
+    transform: scale(1.05);
+}
+
+.hero-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img{
+    width: 450px;
+    max-width: 100%;
+}
+
+
+/* ================= SECTION COMMON STYLING ================= */
+
+section{
+    padding: 80px 8%;
+}
+
+section h2{
+    font-size: 38px;
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+
+/* ================= CATEGORY SECTION ================= */
+
+.category-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.category-card{
+    background-color: #1a1a1a;
+
+    padding: 40px 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.category-card:hover{
+    transform: translateY(-8px);
+
+    background-color: #222222;
+}
+
+
+/* ================= PRODUCTS SECTION ================= */
+
+.product-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+.product-card{
+    background-color: #1a1a1a;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+.product-card:hover{
+    transform: translateY(-10px);
+}
+
+.product-card img{
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.product-card h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.product-card p{
+    color: #bbbbbb;
+    margin-bottom: 15px;
+}
+
+.product-card span{
+    display: block;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #00ff88;
+
+    margin-bottom: 15px;
+}
+
+.product-card button{
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #00ff88;
+
+    color: black;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ================= FEATURES SECTION ================= */
+
+.feature-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.feature-box{
+    background-color: #1a1a1a;
+
+    padding: 40px 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+
+/* ================= OFFER SECTION ================= */
+
+.offer{
+    background: linear-gradient(to right, #00ff88, #00cc6a);
+
+    color: black;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    margin: 80px 8%;
+}
+
+.offer-content h2{
+    margin-bottom: 20px;
+}
+
+.offer-content p{
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+.offer-content button{
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: black;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonial-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.testimonial-card{
+    background-color: #1a1a1a;
+
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+.testimonial-card p{
+    color: #cccccc;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================= CONTACT SECTION ================= */
+
+.contact{
+    text-align: center;
+}
+
+.contact p{
+    margin-bottom: 12px;
+
+    color: #cccccc;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background-color: #111111;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media(max-width: 900px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero{
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 50px;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
