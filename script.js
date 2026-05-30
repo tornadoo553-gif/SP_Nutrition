@@ -1,65 +1,413 @@
-const products = [
+// ================= BUSINESS DETAILS =================
 
-    {
-        name: "Whey Protein",
-        price: "₹2499",
-        image: "assets/product1.jpg",
-        description: "High quality muscle recovery protein."
-    },
+const BUSINESS = {
 
-    {
-        name: "Creatine Monohydrate",
-        price: "₹899",
-        image: "assets/product2.jpg",
-        description: "Improve strength and workout performance."
-    },
+    whatsapp: "917992771457",
 
-    {
-        name: "Mass Gainer",
-        price: "₹1899",
-        image: "assets/product3.jpg",
-        description: "Healthy calorie surplus for muscle gain."
-    },
+    instagram: "https://instagram.com/yourusername",
 
-    {
-        name: "Pre Workout",
-        price: "₹1299",
-        image: "assets/product4.jpg",
-        description: "Boost workout energy and focus."
+    phone: "+9198658411600",
+
+    email: "support@spnutrition.com"
+
+};
+
+
+
+// ================= FOOTER LINKS =================
+
+document.getElementById("whatsapp-link").href =
+
+`https://wa.me/${BUSINESS.whatsapp}`;
+
+
+
+document.getElementById("instagram-link").href =
+
+BUSINESS.instagram;
+
+
+
+document.getElementById("phone-link").href =
+
+`tel:${BUSINESS.phone}`;
+
+
+
+document.getElementById("email-link").href =
+
+`mailto:${BUSINESS.email}`;
+
+
+
+
+
+// ================= API URLS =================
+
+const PRODUCTS_API =
+"https://script.google.com/macros/s/AKfycbwm4rnwTRuWVgbpTr7gCSlRaC61VaI25MW_NL4RDY-A-ZefNCjlGa0iKK-_rNVbVkeNJQ/exec?sheet=products";
+
+const HOMEPAGE_API =
+"https://script.google.com/macros/s/AKfycbwm4rnwTRuWVgbpTr7gCSlRaC61VaI25MW_NL4RDY-A-ZefNCjlGa0iKK-_rNVbVkeNJQ/exec?sheet=homepage";
+
+
+
+// ================= CONTAINERS =================
+
+const slidesContainer =
+document.getElementById("slides-container");
+
+const categoryContainer =
+document.getElementById("category-container");
+
+const brandContainer =
+document.getElementById("brand-container");
+
+
+
+
+
+// ================= LOAD HOMEPAGE =================
+
+fetch(HOMEPAGE_API)
+
+.then(response => response.json())
+
+.then(data => {
+
+    displaySlides(data);
+
+})
+
+.catch(error => {
+
+    console.log("Homepage API Error:", error);
+
+});
+
+
+
+
+
+// ================= LOAD PRODUCTS =================
+
+fetch(PRODUCTS_API)
+
+.then(response => response.json())
+
+.then(products => {
+
+    displayCategories(products);
+
+    displayBrands(products);
+
+})
+
+.catch(error => {
+
+    console.log("Products API Error:", error);
+
+});
+
+
+
+
+
+// ================= DISPLAY SLIDES =================
+
+function displaySlides(slidesData){
+
+    slidesContainer.innerHTML = "";
+
+
+
+    slidesData.forEach((slide, index) => {
+
+
+
+        const activeClass =
+
+            index === 0
+
+            ? "active"
+
+            : "";
+
+
+
+        // TESTIMONIAL SLIDE
+
+        if(slide.type === "testimonial"){
+
+            slidesContainer.innerHTML += `
+
+                <div class="slide ${activeClass}">
+
+                    <div class="slide-wrapper testimonial-slide">
+
+                        <div class="slide-image">
+
+                            <img 
+                                src="${slide.image}" 
+                                alt="${slide.title}"
+                            >
+
+                        </div>
+
+
+
+                        <div class="slide-content">
+
+                            <h1>
+
+                                ${slide.title}
+
+                            </h1>
+
+                            <p>
+
+                                "${slide.description}"
+
+                            </p>
+
+                            <button class="hero-btn">
+
+                                ⭐⭐⭐⭐⭐
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        // OFFER SLIDE
+
+        else{
+
+            slidesContainer.innerHTML += `
+
+                <div class="slide ${activeClass}">
+
+                    <div class="slide-wrapper offer-slide">
+
+                        <div class="slide-content">
+
+                            <h1>
+
+                                ${slide.title}
+
+                            </h1>
+
+                            <p>
+
+                                ${slide.description}
+
+                            </p>
+
+                            <a href="${slide.buttonLink}">
+
+                                <button class="hero-btn">
+
+                                    ${slide.buttonText}
+
+                                </button>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="slide-image">
+
+                            <img 
+                                src="${slide.image}" 
+                                alt="${slide.title}"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    });
+
+
+
+    startSlider();
+
+}
+
+
+
+
+
+// ================= START SLIDER =================
+
+function startSlider(){
+
+    const slides =
+    document.querySelectorAll(".slide");
+
+
+
+    if(slides.length === 0){
+
+        return;
+
     }
 
-];
+
+
+    let currentSlide = 0;
 
 
 
-const productContainer = document.getElementById("product-container");
+    function showSlide(index){
+
+        slides.forEach(slide => {
+
+            slide.classList.remove("active");
+
+        });
 
 
 
-products.forEach(product => {
+        slides[index].classList.add("active");
 
-    productContainer.innerHTML += `
+    }
 
-        <div class="product-card">
 
-            <img src="${product.image}" alt="${product.name}">
 
-            <h3>${product.name}</h3>
+    function nextSlide(){
 
-            <p>${product.description}</p>
+        currentSlide++;
 
-            <span>${product.price}</span>
 
-            <a href="https://wa.me/917992771457?text=Hi,%20I%20want%20to%20order%20${product.name}" target="_blank">
 
-                <button>
-                    Order On WhatsApp
-                </button>
+        if(currentSlide >= slides.length){
+
+            currentSlide = 0;
+
+        }
+
+
+
+        showSlide(currentSlide);
+
+    }
+
+
+
+    setInterval(nextSlide, 4500);
+
+}
+
+
+
+
+
+// ================= DISPLAY CATEGORIES =================
+
+function displayCategories(products){
+
+    const categories = [
+
+        ...new Set(
+
+            products.map(product => product.category)
+
+        )
+
+    ];
+
+
+
+    categoryContainer.innerHTML = "";
+
+
+
+    categories.forEach(category => {
+
+        categoryContainer.innerHTML += `
+
+            <a href="products.html?category=${encodeURIComponent(category)}">
+
+                <div class="category-card">
+
+                    <h3>
+
+                        ${category}
+
+                    </h3>
+
+                </div>
 
             </a>
 
-        </div>
+        `;
 
-    `;
+    });
 
-});
+}
+
+
+
+
+
+// ================= DISPLAY BRANDS =================
+
+function displayBrands(products){
+
+    const brands = [
+
+        ...new Set(
+
+            products.map(product => product.brand)
+
+        )
+
+    ];
+
+
+
+    brandContainer.innerHTML = "";
+
+
+
+    brands.forEach(brand => {
+
+        brandContainer.innerHTML += `
+
+            <a href="products.html?brand=${encodeURIComponent(brand)}">
+
+                <div class="category-card">
+
+                    <h3>
+
+                        ${brand}
+
+                    </h3>
+
+                </div>
+
+            </a>
+
+        `;
+
+    });
+
+}
