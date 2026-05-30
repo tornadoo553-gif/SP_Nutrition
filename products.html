@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+
+        Products | SP_Nutrition
+
+    </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FAVICON -->
+
+    <link rel="icon" href="assets/logo.jpg">
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link 
+        rel="preconnect" 
+        href="https://fonts.gstatic.com" 
+        crossorigin
+    >
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
+        rel="stylesheet"
+    >
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <a href="index.html">
+
+                    <img 
+                        src="assets/logo.jpg" 
+                        alt="SP_Nutrition Logo"
+                    >
+
+                </a>
+
+            </div>
+
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="#products">Products</a>
+                </li>
+
+            </ul>
+
+
+
+            <a href="index.html">
+
+                <button class="shop-btn">
+
+                    Back To Home
+
+                </button>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+
+
+    <!-- ================= PRODUCTS PAGE ================= -->
+
+    <section 
+        id="products" 
+        class="products-page"
+    >
+
+        <!-- TITLE -->
+
+        <h2 id="product-page-title">
+
+            All Products
+
+        </h2>
+
+
+
+        <!-- ================= FILTER BAR ================= -->
+
+        <div class="filter-bar">
+
+            <!-- SEARCH -->
+
+            <input 
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+            >
+
+
+
+            <!-- CATEGORY -->
+
+            <select id="category-filter">
+
+                <option value="">
+
+                    All Categories
+
+                </option>
+
+            </select>
+
+
+
+            <!-- BRAND -->
+
+            <select id="brand-filter">
+
+                <option value="">
+
+                    All Brands
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <div 
+            class="product-container"
+            id="product-container"
+        >
+
+        </div>
+
+
+
+        <!-- NO PRODUCTS -->
+
+        <p 
+            id="no-products-message"
+            class="no-products"
+        >
+
+            No products found.
+
+        </p>
+
+    </section>
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <h3>
+
+            Connect With Us
+
+        </h3>
+
+
+
+        <div class="social-icons">
+
+
+
+            <!-- WHATSAPP -->
+
+            <a 
+                id="whatsapp-link"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+            >
+
+                <svg viewBox="0 0 24 24" width="28" height="28">
+
+                    <path 
+                        fill="#25D366"
+                        fill-rule="evenodd"
+
+                        d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S18.6 0 12 0zm5.5 14.2c-.3-.2-1.7-.8-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.4-3.9-3.2-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.3 3 1.5 3.2c.2.3 2.6 4 6.4 5.4.9.3 1.6.5 2.1.6.9.1 1.7.1 2.3.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.6-.4z"
+                    />
+
+                </svg>
+
+            </a>
+
+
+
+            <!-- INSTAGRAM -->
+
+            <a 
+                id="instagram-link"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+            >
+
+                <svg viewBox="0 0 24 24" width="28" height="28">
+
+                    <path 
+                        fill="#E1306C"
+
+                        d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2.2a2.8 2.8 0 110 5.6 2.8 2.8 0 010-5.6zM17.5 6a1 1 0 100 2 1 1 0 000-2z"
+                    />
+
+                </svg>
+
+            </a>
+
+
+
+            <!-- CALL -->
+
+            <a 
+                id="phone-link"
+                aria-label="Call"
+            >
+
+                <svg viewBox="0 0 24 24" width="28" height="28">
+
+                    <path 
+                        fill="#00ff88"
+
+                        d="M6.6 10.8c1.5 3 4 5.5 7 7l2.3-2.3c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-2.3 2.2z"
+                    />
+
+                </svg>
+
+            </a>
+
+
+
+            <!-- EMAIL -->
+
+            <a 
+                id="email-link"
+                aria-label="Email"
+            >
+
+                <svg viewBox="0 0 24 24" width="28" height="28">
+
+                    <path 
+                        fill="#38bdf8"
+
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                    />
+
+                </svg>
+
+            </a>
+
+        </div>
+
+
+
+        <p>
+
+            © 2026 SP_Nutrition | All Rights Reserved
+
+        </p>
+
+    </footer>
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="products.js"></script>
+
+</body>
+
+</html>
