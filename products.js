@@ -8,7 +8,7 @@ const BUSINESS = {
 
     phone: "+9198658411600",
 
-    email: "support@spnutrition.com"
+    email: "spnutrition2026@gmail.com"
 
 };
 
