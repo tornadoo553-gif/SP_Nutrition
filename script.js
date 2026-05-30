@@ -40,16 +40,13 @@ document.getElementById("email-link").href =
 
 
 
-
-
 // ================= API URLS =================
 
 const PRODUCTS_API =
-"https://script.google.com/macros/s/AKfycbwm4rnwTRuWVgbpTr7gCSlRaC61VaI25MW_NL4RDY-A-ZefNCjlGa0iKK-_rNVbVkeNJQ/exec?sheet=products";
+"https://script.google.com/macros/s/AKfycbzXjShJXNkWdS6QhrQojdXg_1BnG8lMMRyAW0DueltRDLrVFB-C7Hc0FzMtoP1Do0CT/exec?sheet=products";
 
 const HOMEPAGE_API =
-"https://script.google.com/macros/s/AKfycbwm4rnwTRuWVgbpTr7gCSlRaC61VaI25MW_NL4RDY-A-ZefNCjlGa0iKK-_rNVbVkeNJQ/exec?sheet=homepage";
-
+"https://script.google.com/macros/s/AKfycbzXjShJXNkWdS6QhrQojdXg_1BnG8lMMRyAW0DueltRDLrVFB-C7Hc0FzMtoP1Do0CT/exec?sheet=homepage";
 
 
 // ================= CONTAINERS =================
